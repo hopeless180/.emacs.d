@@ -1,6 +1,6 @@
 ﻿;;scratch.el
 ;;个性化界面
-;;(setq initial-major-mode 'org-mode)
+(setq initial-major-mode 'org-mode)
 (setq initial-scratch-message "\
 这是初始界面
 创建文件及打开文件请C-x C-f.
