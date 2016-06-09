@@ -2,12 +2,6 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/lisp/themes/")
 (setq molokai-theme-kit t)
 (load-theme 'molokai t)
-;; ;;自定义前景背景色
-;; (set-background-color "black") ;; 使用黑色背景
-;; (set-foreground-color "white") ;; 使用白色前景
-
-;; (set-face-foreground 'region "red")  ;; 区域前景颜色设为红色
-;; (set-face-background 'region "blue") ;; 区域背景色设为蓝色
 
 ;;显示行号
 (global-linum-mode t)
@@ -21,6 +15,12 @@
 ;;美化显示符号, 比如lambda会显示希腊符号
 (prettify-symbols-mode)
 (global-prettify-symbols-mode 1)
+
+;; 取消警告声音
+(setq visible-bell t)
+
+;; 自动换行
+(setq default-fill-column 80)
 
 
 (custom-set-variables

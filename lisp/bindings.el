@@ -11,20 +11,19 @@
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
 (global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two 
 (global-set-key (kbd "C-x ^")           'join-line)
-(global-set-key (kbd "C-h a")           'apropos)
 (define-key isearch-mode-map (kbd "C-o")
   (lambda () (interactive)
     (let ((case-fold-search isearch-case-fold-search))
       (occur (if isearch-regexp
                  isearch-string
                (regexp-quote isearch-string))))))
-(define-key global-map "\C-x\C-r"       'rgrep)
+(define-key global-map (kbd "C-x C-r")  'rgrep)
 ;;设置org-mode的快捷键
-(global-set-key "\C-ca"                 'org-agenda)
-(global-set-key "\C-cl"                 'org-store-link)
-(global-set-key "\C-cc"                 'org-capture)
-(global-set-key "\C-ca"                 'org-agenda)
-(global-set-key "\C-cb"                 'org-iswitchb)
+(global-set-key (kbd "C-c a")           'org-agenda)
+(global-set-key (kbd "C-c l")           'org-store-link)
+(global-set-key (kbd "C-c c")           'org-capture)
+(global-set-key (kbd "C-c a")           'org-agenda)
+(global-set-key (kbd "C-c b")           'org-iswitchb)
 
 ;;输入法切换的热键冲突问题
 (global-set-key [?\S- ]                 'set-mark-command)
@@ -34,18 +33,19 @@
 
 ;;HELM快捷键
 (global-set-key (kbd "M-x")             'helm-M-x)
-(global-set-key (kbd "M-y")             'helm-show-kill-ring)
-(global-set-key (kbd "C-c h")           'helm-command-prefix)
-(global-set-key (kbd "C-x b")           'helm-mini)
-(global-set-key (kbd "C-x C-f")         'helm-find-files)
-(global-set-key (kbd "C-s")             'helm-occur)
-(global-set-key (kbd "C-h SPC")         'helm-all-mark-rings)
-(global-set-key (kbd "C-x C-b")         'helm-buffer-list)
+(global-set-key (kbd "M-y")		'helm-show-kill-ring)
+(global-set-key (kbd "C-c h")		'helm-command-prefix)
+(global-set-key (kbd "C-x b")		'helm-mini)
+(global-set-key (kbd "C-x C-f")		'helm-find-files)
+(global-set-key (kbd "C-x C-b")		'helm-buffers-list)
+(global-set-key (kbd "C-s")		'helm-occur)
+(global-set-key (kbd "C-h SPC")		'helm-all-mark-rings)
+(global-set-key (kbd "C-x a")      	'helm-apropos)
 
 
 
 ;;绑定F9到快速编译C++上
-(global-set-key [(f9)]                  'quick-compile)
+;;(global-set-key [(f9)]                  'quick-compile)
 
 ;;绑定C-c i到跳转函数功能上
 ;;(global-set-key (kbd "C-c i")         'semantic-ia-fast-jump)
@@ -60,7 +60,7 @@
 ;;(global-set-key (kbd "C-x t")           'insert-current-date)
 
 ;;(插入当前文件的完整路径，这个也比较实用)
-(global-set-key (kbd "<f8>")            'insert-current-file-fill-path)
+;;(global-set-key (kbd "<f8>")            'insert-current-file-fill-path)
 
 ;;跳转到某一行，是没有vim中的:n快
 (global-set-key (kbd "M-g")             'goto-line)
